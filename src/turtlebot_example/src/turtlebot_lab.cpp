@@ -93,7 +93,7 @@ int main(int argc, char **argv)
 		if (counter < 1){
 	
 			
-			if (!init_pos_flag == 1 ){http://stackoverflow.com/questions/13213917/turtlebot-ros-moving-using-twist
+			if (!init_pos_flag == 1 ){
 				x_init = X;
 				y_init = Y;
 				init_pos_flag = 1;
@@ -116,7 +116,7 @@ int main(int argc, char **argv)
 				init_pos_flag = 0;	
 			}
 
-			
+			vel.angular.z = 0.2;
 
 			
 
@@ -125,7 +125,7 @@ int main(int argc, char **argv)
 		}
 
 		velocity_publisher.publish(vel); // Publish the command velocity
-		ROS_INFO("Main - Velocity commands: v - %f, w - %f, dist - %f, x_init - %f, y_init - %f, X - %f, Y - %f", vel.linear.x, vel.angular.z, distance, x_init, y_init, X, Y);
+		ROS_INFO("Main - Velocity commands: v - %f, w - %f, dist - %f, x_init - %f, y_init - %f, X - %f, Y - %f, yaw - %f", vel.linear.x, vel.angular.z, distance, x_init, y_init, X, Y, yaw);
  
 	}
 
